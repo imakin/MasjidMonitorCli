@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import os
+import sys
 try:
     import pyfiglet
 except ModuleNotFoundError:
@@ -8,7 +9,6 @@ except ModuleNotFoundError:
     os.system(f'python3 {os.path.dirname(os.path.realpath(sys.argv[0]) )}/app.py')
     exit(0)
 
-import sys
 
 basedir = os.path.dirname(os.path.realpath(sys.argv[0]) )
 os.chdir(f"{basedir}/source/app")
