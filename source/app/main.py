@@ -46,8 +46,8 @@ class App(reusablecurses.ReusableCurses):
             day_of_the_week = current_time.weekday()
             current_second = str(current_time.second).zfill(2)
             
-            colon = ' ' if (current_time.second%2)==0 else ':'
-            current_time = f"{str(current_time.hour).zfill(2)} {str(current_time.minute).zfill(2)}"
+            colon = '.' if (current_time.second%2)==0 else ':'
+            current_time = f"{str(current_time.hour).zfill(2)}{colon}{str(current_time.minute).zfill(2)}"
         
             prev = {
                 ['seconds', 'jadwal', 'name'][i]:v
@@ -66,7 +66,6 @@ class App(reusablecurses.ReusableCurses):
 
             try:
                 self.text_mid(f"{current_time}", halfheight, width//3, scale=3, font='fonts/ansi_regular')
-                self.text_mid(f"{colon}", halfheight, width//3, scale=3, font='fonts/ansi_regular')
             except:pass
             try:
                 self.text_mid(
