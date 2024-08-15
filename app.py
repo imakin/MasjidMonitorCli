@@ -4,8 +4,8 @@ import sys
 try:
     import pyfiglet
 except ModuleNotFoundError:
-    os.system('sudo pip install pipx venv --break-system-packages')
-    os.system('pipx install pyfiglet')
+    os.system('sudo apt install python3-pip')
+    os.system('sudo pip install pyfiglet --break-system-packages')
     os.system(f'python3 {os.path.dirname(os.path.realpath(sys.argv[0]) )}/app.py')
     exit(0)
 
